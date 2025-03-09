@@ -8,9 +8,21 @@ The objective is to examine existing permissions on the file system and determin
 
 ## File and directory details
 
-First, I checked the permissions on files and directories (pic 1).  
-Then I checked all files and directories, hidden or not (pic 2).   
-I also checked only hidden files to get an eye on it (pic 3).
+First, I checked the permissions on files and directories using the <ls -l> command.
+
+![1 - check permissions on files and directories](https://github.com/user-attachments/assets/a811b268-5aa0-4d76-aeb0-48ae758658fd)
+
+
+Then I checked all files and directories, hidden or not, using the <ls -la> command.
+
+![2 - check all files and directories (hidden or not) permissions](https://github.com/user-attachments/assets/00f2f8ec-34e0-48f3-9010-641c3781472d)
+
+
+I also checked only hidden files to get an eye on it, using the <ls -a> command.
+
+![3 - check hidden files](https://github.com/user-attachments/assets/1405378d-2aff-4374-bd19-8e2392a66deb)
+
+
 
 ## Description of the permissions string
 
@@ -55,15 +67,27 @@ drafts: d r w x \- \- x \- \- \-
 
 ## Focus on file permissions
 
-In this organization, other users should not have write access to any files. For that reason, I removed other users' permission to write from the file project\_k.txt. (pic 5\)
+In this organization, other users should not have write access to any files. For that reason, I removed other users' permission to write from the file project\_k.txt using the <chmod> command with the writing permissions removal to other users as 1st argument and project_k.txt as 2nd argument.
+
+![5 -removing other users permission to write from the file project_k txt](https://github.com/user-attachments/assets/ed7c5906-1da1-4882-8e14-42387f859fb1)
+
+
 
 ## Focus on file permissions on a hidden file
 
-.project\_x.txt is a hidden file because it has been archived. No one should have the write permissions on it, so I removed it from user and group. (pic 6\)
+.project\_x.txt is a hidden file because it has been archived. No one should have the write permissions on it, so I removed it from user and group using the <chmod> command with the writing permissions removal to the owner and group users as 1st argument and .project_x.txt as 2nd argument.
+
+![6 -  project_x txt is a hidden file because it has been archived  No one should have the write permissions on it, so I removed it from user and group](https://github.com/user-attachments/assets/335b05cf-8d01-4e92-a42e-2c2b56e2c577)
+
+
 
 ## Focus on directory permissions
 
-The files and directories in the projects directory belong to the researcher2 user, so he should be the only user allowed to access the drafts directory and its contents. Let's remove the group permission to access it\! (pic 7\)
+The files and directories in the projects directory belong to the researcher2 user, so he should be the only user allowed to access the drafts directory and its contents. Let's remove the group permission to access it using the <chmod> command with execute permissions removal to group users as 1st argument and drafts as 2nd argument.
+
+![7 - the files and directories in the projects directory belong to the researcher2 user, so he should be the only user allowed to access the drafts directory and its contents  Let's remove the group permission to ac](https://github.com/user-attachments/assets/0c0afd51-79a3-47b2-9c17-b640a9cf2aac)
+
+
 
 ## Summary
 
